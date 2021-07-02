@@ -14,7 +14,7 @@ import csv
 
 # The thresholds and filenames etc. need to be placed below
 
-path = r"/Users/Mathew/Dropbox (Cambridge University)/Ed Code/TCCD Analysis/Files/"           # This is the folder that needs to be analysed
+path = r"/Users/Mathew/Documents/Edinburgh Code/TCCD Analysis/Files/"           # This is the folder that needs to be analysed
 
 file_stem="DNA"         # This is the filename before the underscore. 
 number_of_files=2       # Number of files in the folder (could make this automatic in the future).
@@ -44,7 +44,7 @@ def load_files(number_of_files):
                 channelB.append(row[1])
                 a+=1
         
-        print "Loaded %s, which contains %s rows."%(filename,a)   
+        print("Loaded %s, which contains %s rows."%(filename,a))   
         
     channelA_arr=np.asarray(channelA,dtype=np.float32)                              # Converts these to numpy arrays for vector calcs.
     channelB_arr=np.asarray(channelB,dtype=np.float32)
@@ -82,7 +82,7 @@ var_B_events=float(len(channelB_only_events))
 var_chance_events=float(len(channelA_chance))
 Q=float((var_real_events-var_chance_events)/(var_A_events+var_B_events-(var_real_events-var_chance_events)))
 
-print ('There were %s A events, %s B events, %s coincidence events, and %s chance events. Q = %f.')%(var_A_events,var_B_events,var_real_events,var_chance_events,Q)
+print(('There were %s A events, %s B events, %s coincidence events, and %s chance events. Q = %f.')%(var_A_events,var_B_events,var_real_events,var_chance_events,Q))
 
 
 # Now want histograms etc. 
@@ -138,7 +138,7 @@ def maxQ():
     result=np.where(q_vals == np.amax(q_vals))
     ThresholdA,ThresholdB=result
     
-    print 'The maximum value of Q is %.3f, with a threshold of %s in channel A, and %s in channel B.'%(maximum_Q,str(ThresholdA),ThresholdB)
+    print('The maximum value of Q is %.3f, with a threshold of %s in channel A, and %s in channel B.'%(maximum_Q,str(ThresholdA),ThresholdB))
     
     
     contourplot = plt.contourf(q_vals,20,origin='lower')
