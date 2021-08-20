@@ -50,8 +50,8 @@ file_stem="AS"          # This is the part of the filename that will be searched
 
 # Thresholds and other parameters:
     
-channelA_thresh=10      # Threshold for Channel A (Green).
-channelB_thresh=10      # Threshold for Channel B (Red).
+channelA_thresh=19      # Threshold for Channel A (Green).
+channelB_thresh=19      # Threshold for Channel B (Red).
 channelA_AF=1.16        # Autofluorescence
 channelB_AF=1.13
 xtalk=0.0             # Cross-talk from A to B
@@ -153,13 +153,13 @@ for path in pathlist:
     channelB_brightness=channelB_only_minus_events.mean()
     
     
-    channelA_mean=channelA_only_events.mean()
-    channelA_SD=channelA_only_events.std()
-    channelA_med=np.median(channelA_only_events)
+    channelA_mean=channelA_events.mean()
+    channelA_SD=channelA_events.std()
+    channelA_med=np.median(channelA_events)
     
-    channelB_mean=channelB_only_events.mean()
-    channelB_SD=channelB_only_events.std()
-    channelB_med=np.median(channelB_only_events)
+    channelB_mean=channelB_events.mean()
+    channelB_SD=channelB_events.std()
+    channelB_med=np.median(channelB_events)
     # Now need to account for chance events:
     
     channelB_shuffle=channelB_arr.copy()
@@ -209,6 +209,8 @@ for path in pathlist:
     plt.ylim(-200,200)
     plt.savefig(path+'/'+'example_trace.pdf')
     plt.show()
+    
+    
     
     total_intensity=channelB_events+channelA_events
     plt.hist(total_intensity, bins = 60,range=[0,1000], rwidth=0.9,ec='black',color='#ff0000',alpha=0.8,)
