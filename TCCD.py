@@ -116,7 +116,8 @@ def maxQ():
     cbar.ax.set_ylabel('Q')
     
 Output_all = pd.DataFrame(columns=['Path','Number_of_files','Threshold_A','Threshold_B','Events_A','Events_B','Events_coincindent',
-                                       'Events_chance','Q','Total_Intensity_mean','Total_Intensity_SD','Total_Intensity_med','Intensity_A_mean','Intensity_A_SD','Intensity_A_med','Intensity_B_mean','Intensity_B_SD','Intensity_B_med'])
+                                       'Events_chance','Q','Total_Intensity_mean','Total_Intensity_SD','Total_Intensity_med','Intensity_A_mean','Intensity_A_SD','Intensity_A_med','Intensity_B_mean','Intensity_B_SD','Intensity_B_med',
+                                       'Sizes_mean','Sizes_SD','Sizes_med','A_ave','B_ave'])
 
 for path in pathlist:
     channelA_arr,channelB_arr,num=load_files(file_stem,path)
@@ -134,6 +135,13 @@ for path in pathlist:
     channelB_only_events=channelB_arr[(channelB_arr>channelB_thresh)]                       # Total B events
     channelA_events=channelA_arr[np.logical_and(channelA_arr>channelA_thresh, channelB_arr>channelB_thresh)]  # A coincident events             
     channelB_events=channelB_arr[np.logical_and(channelA_arr>channelA_thresh, channelB_arr>channelB_thresh)]  # B coincident events
+    
+    channelA_only_minus_events=channelA_arr[np.logical_and(channelA_arr>channelA_thresh, channelB_arr<channelB_thresh)] # Non-oincidence events
+    channelB_only_minus_events=channelB_arr[np.logical_and(channelA_arr<channelA_thresh, channelB_arr>channelB_thresh)] # Non-oincidence events
+    
+    channelA_brightness=channelA_only_minus_events.mean()
+    channelB_brightness=channelB_only_minus_events.mean()
+    
     
     channelA_mean=channelA_only_events.mean()
     channelA_SD=channelA_only_events.std()
@@ -203,8 +211,20 @@ for path in pathlist:
     total_mean=total_intensity.mean()
     total_SD=total_intensity.std()
     total_med=np.median(total_intensity)
+    
+    sizes=channelB_events/channelB_brightness+channelA_events/channelA_brightness
+    plt.hist(sizes, bins = 20,range=[0,50], rwidth=0.9,ec='black',color='#ff0000',alpha=0.8,)
+    plt.yscale('log')
+    plt.xlabel('Approximate size (monomers)')
+    plt.ylabel('Number of events')
+    plt.savefig(path+'/'+'Sizes.pdf')
+    plt.show()
+    
+    sizes_mean=sizes.mean()
+    sizes_SD=sizes.std()
+    sizes_med=np.median(sizes)
     Output_all= Output_all.append({'Path':path,'Number_of_files':num,'Threshold_A':channelA_thresh,'Threshold_B':channelB_thresh,'Events_A':var_A_events,'Events_B':var_B_events,'Events_coincindent':var_real_events,'Q':Q,
-                                       'Events_chance':var_chance_events,'Total_Intensity_mean':total_mean,'Total_Intensity_SD':total_SD,'Total_Intensity_med':total_med,'Intensity_A_mean':channelA_mean,'Intensity_A_SD':channelA_SD,'Intensity_A_med':channelA_med,'Intensity_B_mean':channelB_mean,'Intensity_B_SD':channelB_SD,'Intensity_B_med':channelB_med},ignore_index=True)
+                                       'Events_chance':var_chance_events,'Total_Intensity_mean':total_mean,'Total_Intensity_SD':total_SD,'Total_Intensity_med':total_med,'Intensity_A_mean':channelA_mean,'Intensity_A_SD':channelA_SD,'Intensity_A_med':channelA_med,'Intensity_B_mean':channelB_mean,'Intensity_B_SD':channelB_SD,'Intensity_B_med':channelB_med,'Sizes_mean':sizes_mean,'Sizes_SD':sizes_SD,'Sizes_med':sizes_med,'A_ave':channelA_brightness,'B_ave':channelB_brightness},ignore_index=True)
 
 Output_all.to_csv(path_root + '/' + 'all_metrics.csv', sep = '\t')
 
