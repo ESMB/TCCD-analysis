@@ -14,28 +14,38 @@ import os
 pathlist=[]
 
 # Where to store the overall file containing means etc. for each experiment.
-path_root=r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/"
+path_root=r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/"
 
 # Foldert to analyse here:
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/20pM488_1pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/PBS Only/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/30pM488_4pM647_200nMasyn/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/35pM488_5pM647_200nMasyn_1/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/30pM488_4pM647_20nMasyn_1/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/25pM488_1pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/70pM488_10pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/30pM488_4pM647_200nMasyn_7mins/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/20pM488_3pM647_200nMasyn/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/5pM488_1pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/35pM488_5pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/30pM488_4pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/30pM488_4pM647_20nMasyn/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/7pM488_1pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/10pM488_1pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/20pM488_3pM647/")
-pathlist.append(r"/Users/Mathew/Documents/Current analysis/20210712_UCBhighaffinityantibodies/Setup experiments/Concentration 50_50ratio/35pM488_5pM647_200nMasyn/")
 
-file_stem="Ab"          # This is the part of the filename that will be searched for in each folder.
+# pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/Align/1/")
+    
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/0pM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/0pM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/0pM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100fM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100fM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100fM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1pM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1pM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1pM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10pM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10pM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10pM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100pM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100pM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100pM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1nM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1nM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1nM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10nM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10nM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10nM/3/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100nM/1/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100nM/2/")
+pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100nM/3/")
+
+file_stem="AS"          # This is the part of the filename that will be searched for in each folder.
 # number_of_files=5       # Number of files in the folder (could make this automatic in the future).
 
 # Thresholds and other parameters:
@@ -44,7 +54,7 @@ channelA_thresh=10      # Threshold for Channel A (Green).
 channelB_thresh=10      # Threshold for Channel B (Red).
 channelA_AF=1.16        # Autofluorescence
 channelB_AF=1.13
-xtalk=0.237             # Cross-talk from A to B
+xtalk=0.0             # Cross-talk from A to B
 
 def load_files(filename_contains,path):
     print(path)
@@ -156,7 +166,7 @@ for path in pathlist:
     np.random.shuffle(channelB_shuffle)
     
     channelA_chance=channelA_arr[np.logical_and(channelA_arr>channelA_thresh, channelB_shuffle>channelB_thresh)]    # These are the chance events    
-    channelB_chance=channelB_arr[np.logical_and(channelA_arr>channelA_thresh, channelB_shuffle>channelB_thresh)]
+    channelB_chance=channelB_shuffle[np.logical_and(channelA_arr>channelA_thresh, channelB_shuffle>channelB_thresh)]
     
     # Now need to calculate Q value:
     
@@ -226,6 +236,6 @@ for path in pathlist:
     Output_all= Output_all.append({'Path':path,'Number_of_files':num,'Threshold_A':channelA_thresh,'Threshold_B':channelB_thresh,'Events_A':var_A_events,'Events_B':var_B_events,'Events_coincindent':var_real_events,'Q':Q,
                                        'Events_chance':var_chance_events,'Total_Intensity_mean':total_mean,'Total_Intensity_SD':total_SD,'Total_Intensity_med':total_med,'Intensity_A_mean':channelA_mean,'Intensity_A_SD':channelA_SD,'Intensity_A_med':channelA_med,'Intensity_B_mean':channelB_mean,'Intensity_B_SD':channelB_SD,'Intensity_B_med':channelB_med,'Sizes_mean':sizes_mean,'Sizes_SD':sizes_SD,'Sizes_med':sizes_med,'A_ave':channelA_brightness,'B_ave':channelB_brightness},ignore_index=True)
 
-Output_all.to_csv(path_root + '/' + 'all_metrics.csv', sep = '\t')
+    Output_all.to_csv(path_root + '/' + 'all_metrics.csv', sep = '\t')
 
 
