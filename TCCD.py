@@ -14,47 +14,48 @@ import os
 pathlist=[]
 
 # Where to store the overall file containing means etc. for each experiment.
-path_root=r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/"
+path_root=r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/"
 
-# Foldert to analyse here:
+# # Foldert to analyse here:
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/0h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/0h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/0h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/12h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/12h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/12h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/24h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/24h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/24h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/3h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/3h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/3h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/6h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/6h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/6h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/9h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/9h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/9h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/48h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/48h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/48h/2/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/72h/1/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/72h/3/")
+pathlist.append(r"/Users/Mathew/Documents/Current analysis/TimecourseThTvsAb/Ab/72h/2/")
 
-# pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/Align/1/")
-    
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/0pM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/0pM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/0pM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100fM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100fM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100fM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1pM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1pM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1pM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10pM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10pM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10pM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100pM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100pM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100pM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1nM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1nM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/1nM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10nM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10nM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/10nM/3/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100nM/1/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100nM/2/")
-pathlist.append(r"/Volumes/chem-mh-store-1/Members/Mathew Horrocks/Data/20210818_test_curve/100nM/3/")
+
 
 file_stem="AS"          # This is the part of the filename that will be searched for in each folder.
 # number_of_files=5       # Number of files in the folder (could make this automatic in the future).
 
 # Thresholds and other parameters:
     
-channelA_thresh=19      # Threshold for Channel A (Green).
-channelB_thresh=19      # Threshold for Channel B (Red).
-channelA_AF=1.16        # Autofluorescence
-channelB_AF=1.13
-xtalk=0.0             # Cross-talk from A to B
+channelA_thresh=10      # Threshold for Channel A (Green).
+channelB_thresh=10     # Threshold for Channel B (Red).
+channelA_AF=0.40        # Autofluorescence
+channelB_AF=2.75
+xtalk=0.03             # Cross-talk from A to B
+size_split_med=5
+size_split_lar=20
 
 def load_files(filename_contains,path):
     print(path)
@@ -64,19 +65,20 @@ def load_files(filename_contains,path):
     for root, dirs, files in os.walk(path):
       for name in files:
               # print(name)
-              if filename_contains in name:
-                  resultsname = name
-                  print(name)
-                  num+=1
-                  a=0
-                  with open(path+name) as csvDataFile:                                                # Opens the file as a CSV
-                        csvReader = csv.reader(csvDataFile,delimiter='\t')                           # Assigns the loaded CSV file to csvReader. 
-                        for row in csvReader:
-                            channelA_sample.append(row[0])                                                     # For every row in in csvReader, the values are apended to green and red.         
-                            channelB_sample.append(row[1])
-                            a+=1
-        
-                        print ("Loaded %s, which contains %s rows."%(resultsname,a))
+              if filename_contains or 'ThT' in name:
+                  if 'pdf' not in name:
+                      resultsname = name
+                      print(name)
+                      num+=1
+                      a=0
+                      with open(path+name) as csvDataFile:                                                # Opens the file as a CSV
+                            csvReader = csv.reader(csvDataFile,delimiter='\t')                           # Assigns the loaded CSV file to csvReader. 
+                            for row in csvReader:
+                                channelA_sample.append(row[0])                                                     # For every row in in csvReader, the values are apended to green and red.         
+                                channelB_sample.append(row[1])
+                                a+=1
+            
+                            print ("Loaded %s, which contains %s rows."%(resultsname,a))
     rows=len(channelA_sample)
     print("Loaded %s files in total, with a total of %s rows"%(num,rows))
         
@@ -127,9 +129,11 @@ def maxQ():
     
 Output_all = pd.DataFrame(columns=['Path','Number_of_files','Threshold_A','Threshold_B','Events_A','Events_B','Events_coincindent',
                                        'Events_chance','Q','Total_Intensity_mean','Total_Intensity_SD','Total_Intensity_med','Intensity_A_mean','Intensity_A_SD','Intensity_A_med','Intensity_B_mean','Intensity_B_SD','Intensity_B_med',
-                                       'Sizes_mean','Sizes_SD','Sizes_med','A_ave','B_ave'])
+                                       'Sizes_mean','Sizes_SD','Sizes_med','A_ave','B_ave','small','medium','large'])
 
 for path in pathlist:
+    # path=path.replace('/Ab/','/ThT/')
+    print(path)
     channelA_arr,channelB_arr,num=load_files(file_stem,path)
     
     
@@ -205,8 +209,8 @@ for path in pathlist:
     plt.plot(channelB_arr_inv,color='red')
     plt.xlabel('Bin number')
     plt.ylabel('Intensity (photons)')
-    plt.xlim(0,8000)
-    plt.ylim(-200,200)
+    plt.xlim(0,500)
+    plt.ylim(-100,100)
     plt.savefig(path+'/'+'example_trace.pdf')
     plt.show()
     
@@ -232,12 +236,29 @@ for path in pathlist:
     plt.savefig(path+'/'+'Sizes.pdf')
     plt.show()
     
+    
+    sizes_small=sizes[(sizes<size_split_med)] 
+    sizes_med=sizes[np.logical_and(sizes<size_split_lar,sizes>size_split_med)]
+    sizes_large=sizes[(sizes>size_split_lar)] 
+    
+    small_num=len(sizes_small)
+    med_num=len(sizes_med)
+    large_num=len(sizes_large)
+    
     sizes_mean=sizes.mean()
     sizes_SD=sizes.std()
     sizes_med=np.median(sizes)
     Output_all= Output_all.append({'Path':path,'Number_of_files':num,'Threshold_A':channelA_thresh,'Threshold_B':channelB_thresh,'Events_A':var_A_events,'Events_B':var_B_events,'Events_coincindent':var_real_events,'Q':Q,
-                                       'Events_chance':var_chance_events,'Total_Intensity_mean':total_mean,'Total_Intensity_SD':total_SD,'Total_Intensity_med':total_med,'Intensity_A_mean':channelA_mean,'Intensity_A_SD':channelA_SD,'Intensity_A_med':channelA_med,'Intensity_B_mean':channelB_mean,'Intensity_B_SD':channelB_SD,'Intensity_B_med':channelB_med,'Sizes_mean':sizes_mean,'Sizes_SD':sizes_SD,'Sizes_med':sizes_med,'A_ave':channelA_brightness,'B_ave':channelB_brightness},ignore_index=True)
+                                       'Events_chance':var_chance_events,'Total_Intensity_mean':total_mean,'Total_Intensity_SD':total_SD,'Total_Intensity_med':total_med,'Intensity_A_mean':channelA_mean,'Intensity_A_SD':channelA_SD,'Intensity_A_med':channelA_med,'Intensity_B_mean':channelB_mean,'Intensity_B_SD':channelB_SD,'Intensity_B_med':channelB_med,'Sizes_mean':sizes_mean,'Sizes_SD':sizes_SD,'Sizes_med':sizes_med,'A_ave':channelA_brightness,'B_ave':channelB_brightness,
+                                       'small':small_num,'medium':med_num,'large':large_num},ignore_index=True)
 
-    Output_all.to_csv(path_root + '/' + 'all_metrics.csv', sep = '\t')
+    Output_all.to_csv(path_root + '/' + 'all_metrics_10_10.csv', sep = '\t')
 
 
+    x_bins = np.linspace(0,100,20)
+    y_bins = np.linspace(0,100,20)
+    plt.hist2d(channelA_events, channelB_events, bins=[x_bins,y_bins], cmap=plt.cm.Greys)
+    plt.colorbar()
+    plt.savefig(path+'/'+'2D_Sizes.pdf')
+    
+    
